@@ -27,7 +27,9 @@ class App extends Component {
     render() {
         return (
             <div className="container">
-               <SearchBar onSearchChange={term => this.videoSearch(term)}/>
+               <div className="row pt-3">
+                   <SearchBar className="col" onSearchChange={term => this.videoSearch(term)}/>
+               </div>
                Videos Count: {this.state.videos.length}
             </div>
         );

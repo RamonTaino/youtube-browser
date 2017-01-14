@@ -8,14 +8,12 @@ class SearchBar extends Component {
     
     render() {
         return (
-            <div className="row search-bar">
-                <div className="col mt-3"> 
-                    <input className="form-control" 
-                            placeholder="Search YouTube" 
-                            value={ this.state.term } 
-                            onChange={ event => this.onSearchChange(event.target.value) } 
-                            autoFocus/>
-                </div>
+            <div className="col search-bar"> 
+                <input className="form-control" 
+                        placeholder="Search YouTube" 
+                        value={ this.state.term } 
+                        onChange={ event => this.onSearchChange(event.target.value) } 
+                        autoFocus/>
             </div>
         );
     }
