@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import '../css/styles.css';
 
+import SearchBar from './components/search-bar';
+
 class App extends Component {
 
     constructor(props) {
@@ -20,6 +22,7 @@ class App extends Component {
     render() {
         return (
             <div className="container">
+               <SearchBar onSearchChange={term => this.videoSearch(term)}/>
             </div>
         );
     }
