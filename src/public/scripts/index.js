@@ -7,14 +7,19 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            
+            videos: []
         };
+
+        this.videoSearch('React Development');
+    }
+
+    videoSearch(term) {
+        console.log(term);
     }
 
     render() {
         return (
-            <div>
-               
+            <div className="container">
             </div>
         );
     }
