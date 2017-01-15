@@ -1,2 +1,6 @@
 # youtube-browser
-> YouTube Video Browser
+> YouTube Video browser
+* git clone ....
+* cd youtube-browser
+* npm install
+* npm run serve
