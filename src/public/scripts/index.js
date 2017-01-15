@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
+import _ from 'lodash';
 import '../css/styles.css';
-
 import config from './config/config';
 import YouTubeApiSearch from 'youtube-api-search';
 import SearchBar from './components/search-bar';
@@ -17,7 +17,7 @@ class App extends Component {
             videos: [],
             selectedVideo: null
         };
-        this.videoSearch(config.DEFAULT_SEARCH_TERM);
+        this.videoSearch();
     }
 
     videoSearch(term) {
@@ -31,10 +31,12 @@ class App extends Component {
     }
 
     render() {
+        const videoSearch = _.debounce(term => this.videoSearch(term), 300);
+
         return (
             <div className="container">
                 <div className="row pt-3">
-                    <SearchBar className="col" onSearchChange={term => this.videoSearch(term)}/>
+                    <SearchBar className="col" onSearchChange={term => videoSearch(term)}/>
                 </div>
                 <div className="row pt-3">
                     <VideoDetail video={this.state.selectedVideo}/>
